@@ -95,10 +95,11 @@ const App = () => {
           </div>
 
           <LoadScript
-            googleMapsApiKey="AIzaSyA4oRqYuDXssuiguKDR-uyCKdWsveDasE4"
+            googleMapsApiKey=""
             onLoad={() => console.log("Google Maps API Loaded")}
             onError={() => console.error("Failed to load Google Maps API")}
           >
+        
             <GoogleMap
               mapContainerStyle={containerStyle}
               center={center}
