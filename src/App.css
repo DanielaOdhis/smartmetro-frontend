@@ -99,3 +99,229 @@ footer .social-icons {
 .map-controls button:hover {
   background-color: #45a049;
 }
+
+.about-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+.nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.profile {
+  font-size: 20px;
+}
+
+.about-content {
+  margin-top: 20px;
+}
+
+.intro-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.intro-section h1 {
+  font-size: 2em;
+}
+
+.intro-section p {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.intro-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+.mission-vision-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.mission, .vision {
+  width: 45%;
+}
+
+.mission h2, .vision h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.future-plans-section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.team-section {
+  margin-top: 40px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.team-card {
+  text-align: center;
+}
+
+.team-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cta-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cta-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.cta-button:hover {
+  background-color: #45a049;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer ul li {
+  display: inline;
+  margin-right: 15px;
+}
+
+.footer .social-icons {
+  margin-top: 10px;
+}
+
+.footer .social-icons i {
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+/* General Section Styling */
+.mission-vision-section,
+.future-plans-section {
+  padding: 40px 20px;
+  margin: 20px 0;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mission-vision-section h2,
+.future-plans-section h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.mission-vision-section p,
+.future-plans-section ul {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Mission and Vision Layout */
+.mission-vision-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.mission,
+.vision {
+  width: 48%; /* Ensure each section takes up about half of the width */
+}
+
+.mission h2,
+.vision h2 {
+  color: #2b6dbf; /* Light blue for headers */
+}
+
+.mission p,
+.vision p {
+  font-style: italic;
+}
+
+/* Future Plans Styling */
+.future-plans-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.future-plans-section li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  position: relative;
+}
+
+.future-plans-section li::before {
+  content: '•'; /* Bullet points */
+  position: absolute;
+  left: 0;
+  color: #2b6dbf;
+  font-size: 24px;
+  top: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .mission-vision-section {
+    flex-direction: column;
+  }
+
+  .mission,
+  .vision {
+    width: 100%; /* Full width on mobile */
+  }
+
+  .mission-vision-section h2 {
+    font-size: 22px;
+  }
+
+  .future-plans-section ul {
+    padding-left: 20px;
+  }
+}
