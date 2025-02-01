@@ -1,0 +1,101 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #1e3d58;
+  color: white;
+}
+
+.header .logo {
+  font-size: 1.5rem;
+}
+
+.header .nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+.header .profile {
+  font-size: 1.5rem;
+}
+
+.main-content {
+  display: flex;
+  height: calc(100vh - 120px);  /* Subtract header and footer height */
+  padding: 1rem;
+}
+
+.main-content .map-container {
+  width: 60%;
+}
+
+.main-content .bus-list {
+  width: 40%;
+  padding-left: 2rem;
+}
+
+footer {
+  padding: 1rem;
+  background-color: #1e3d58;
+  color: white;
+  text-align: center;
+}
+
+footer .social-icons {
+  margin-top: 1rem;
+}
+
+.legend {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Use 'fixed' to keep it in place even when the page is scrolled */
+  bottom: 20px; /* Distance from the bottom of the screen */
+  left: 20px; /* Distance from the left of the screen */
+  z-index: 1000;
+}
+
+.traffic-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.color-box {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.map-controls {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.map-controls button {
+  margin: 5px;
+  padding: 8px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.map-controls button:hover {
+  background-color: #45a049;
+}
