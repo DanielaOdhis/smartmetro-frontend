@@ -20,35 +20,37 @@ const Tracking = () => {
   const [isError, setIsError] = useState(false);  // State to handle error
   const [socket, setSocket] = useState(null);
   const [mapType, setMapType] = useState("roadmap"); // Default map type is "roadmap"
+  const [routeDirection, setRouteDirection] = useState("Nairobi-Juja"); // Default direction
 
-  // Fetch buses from the server API
+  // Fetch buses from the server API based on direction
+  const fetchBuses = async (direction) => {
+    try {
+      const response = await fetch(`http://localhost:5000/api/buses?direction=${direction}`);
+      const data = await response.json();
+      setBuses(data);
+    } catch (error) {
+      setIsError(true);
+    }
+  };
+
+  // Fetch buses on component mount and on direction change
   useEffect(() => {
-    const fetchBuses = async () => {
-      try {
-        const response = await fetch("http://localhost:5000/api/buses");
-        const data = await response.json();
-        setBuses(data);
-      } catch (error) {
-        setIsError(true);
-      }
-    };
-
-    fetchBuses();
+    fetchBuses(routeDirection);
 
     // Set up Socket.IO for real-time updates
     const socketInstance = io("http://localhost:5000");
     setSocket(socketInstance);
 
     socketInstance.on("bus-location-update", (data) => {
-      setBuses((prevBuses) => prevBuses.map((bus) => 
-        bus.id === data.id ? { ...bus, ...data } : bus
-      ));
+      setBuses((prevBuses) =>
+        prevBuses.map((bus) => (bus.id === data.id ? { ...bus, ...data } : bus))
+      );
     });
 
     return () => {
       if (socketInstance) socketInstance.disconnect();
     };
-  }, []);
+  }, [routeDirection]);
 
   // Render fallback UI if there's an error
   if (isError) {
@@ -69,6 +71,11 @@ const Tracking = () => {
     setMapType(type);
   };
 
+  // Handle route direction change
+  const handleDirectionChange = (direction) => {
+    setRouteDirection(direction); // Update route direction
+  };
+
   return (
     <div className="App">
       <header className="header">
@@ -86,12 +93,17 @@ const Tracking = () => {
 
       <main className="main-content">
         <div className="map-container" style={{ width: '60%' }}>
-          <h2>Nairobi-Juja Route</h2>
-          
+          <h2>{routeDirection} Route</h2>
+
           <div className="map-controls">
             <button onClick={() => handleMapTypeChange("roadmap")}>Roadmap</button>
             <button onClick={() => handleMapTypeChange("satellite")}>Satellite</button>
             <button onClick={() => handleMapTypeChange("terrain")}>Terrain</button>
+          </div>
+
+          <div className="route-toggle">
+            <button onClick={() => handleDirectionChange("Nairobi-Juja")}>Nairobi to Juja</button>
+            <button onClick={() => handleDirectionChange("Juja-Nairobi")}>Juja to Nairobi</button>
           </div>
 
           <LoadScript
@@ -121,7 +133,7 @@ const Tracking = () => {
         </div>
 
         <div className="bus-list" style={{ width: '40%' }}>
-          <h2>Upcoming Buses on Nairobi-Juja Route</h2>
+          <h2>Upcoming Buses on {routeDirection} Route</h2>
           <ul>
             {buses.map((bus) => (
               <li key={bus.id}>
@@ -131,6 +143,25 @@ const Tracking = () => {
                 <div>Estimated Arrival Time: {bus.estimated_arrival_time}</div>
               </li>
             ))}
+          </ul>
+        </div>
+
+        {/* Traffic Legend at Bottom */}
+        <div className="traffic-legend-bottom">
+          <h3>Traffic Legend</h3>
+          <ul>
+            <li>
+              <span className="legend-color" style={{ backgroundColor: 'green' }}></span>
+              <span>Clear Traffic</span>
+            </li>
+            <li>
+              <span className="legend-color" style={{ backgroundColor: 'orange' }}></span>
+              <span>Moderate Traffic</span>
+            </li>
+            <li>
+              <span className="legend-color" style={{ backgroundColor: 'red' }}></span>
+              <span>Heavy Traffic</span>
+            </li>
           </ul>
         </div>
       </main>
