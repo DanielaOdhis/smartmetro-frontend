@@ -13,8 +13,7 @@ function App() {
         <Route path="/tracking" element={<Tracking />} />
       </Routes>
     </Router>
-    
-   
+
   );
 }
 
