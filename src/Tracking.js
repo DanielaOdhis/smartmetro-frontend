@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import './App.css';
+import './Tracking.css';
 import io from 'socket.io-client';
 
 // Set up the initial map center and zoom level

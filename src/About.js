@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './About.css';
 
 const teamMembers = [
   {
@@ -66,7 +66,7 @@ const About = () => {
           <ul>
             <li>Add mobile app support for real-time notifications.</li>
             <li>Integrate the system with other transport systems in Kenya.</li>
-            <li>Include features like route optimization for faster commutes.</li>
+            <li>Introduce Multiple Language Support,i.e, Swahili.</li>
           </ul>
         </section>
 

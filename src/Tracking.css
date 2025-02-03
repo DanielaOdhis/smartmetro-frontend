@@ -1,0 +1,160 @@
+
+.App {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #042d57;
+    color: white;
+    padding: 15px 20px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .nav a:hover {
+    color: #ffd700; /* Golden yellow */
+  }
+  
+  /* Profile icon */
+  .profile {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  /* Main content layout */
+  .main-content {
+    display: flex;
+    padding: 20px;
+  }
+  
+  /* Map container */
+  .map-container {
+    width: 60%;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .map-container h2 {
+    text-align: center;
+    color: #004d99;
+  }
+  
+  /* Map controls */
+  .map-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .map-controls button {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  .map-controls button:hover {
+    background: #e68900;
+  }
+  
+  /* Bus list */
+  .bus-list {
+    width: 40%;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bus-list h2 {
+    text-align: center;
+    color: #ff9800;
+  }
+  
+  .bus-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .bus-list li {
+    background: #e9f5ff;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border-left: 5px solid #004d99;
+    transition: transform 0.3s;
+  }
+  
+  .bus-list li:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Footer */
+  .footer {
+    background-color:  #042d57;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  .footer ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Social icons */
+  .social-icons {
+    margin-top: 10px;
+  }
+  
+  .social-icons i {
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  .social-icons i:hover {
+    color: #004d99;
+  }
+  
