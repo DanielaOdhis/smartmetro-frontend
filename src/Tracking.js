@@ -95,7 +95,7 @@ const Tracking = () => {
           </div>
 
           <LoadScript
-            googleMapsApiKey="process.env.REACT_APP_GOOGLE_MAPS_API_KEY"
+            googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
             onLoad={() => console.log("Google Maps API Loaded")}
             onError={() => console.error("Failed to load Google Maps API")}
           >

@@ -42,7 +42,6 @@ const About = () => {
       </header>
 
       <main className="about-content">
-        {/* Introduction Section */}
         <section className="intro-section">
           <h1>About Smart Metro</h1>
           <p>
@@ -51,7 +50,6 @@ const About = () => {
           <img src="/metrobus.jpg" alt="Thika Road" className="intro-image" />
         </section>
 
-        {/* Mission and Vision Section */}
         <section className="mission-vision-section">
           <div className="mission">
             <h2>Mission</h2>
@@ -63,7 +61,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* Future Plans Section */}
         <section className="future-plans-section">
           <h2>Future Plans</h2>
           <ul>
@@ -73,7 +70,6 @@ const About = () => {
           </ul>
         </section>
 
-        {/* Team Members Section */}
         <section className="team-section">
           <h2>Meet Our Team</h2>
           <div className="team-grid">
@@ -87,7 +83,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="cta-section">
           <a href="/tracking" className="cta-button">Track Your Bus Now</a>
         </section>
